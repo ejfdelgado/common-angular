@@ -3,8 +3,11 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "build": "ng build common-angular",
+    "build": "ng build common-angular --configuration production",
+    "npm_login": "npm login",
+    "bip": "ffplay /sound/finish.mp3 -nodisp -nostats -hide_banner -autoexit",
     "build:watch": "ng build common-angular --watch --configuration development",
+    "publish": "npm run build && cd dist/common-angular && npm publish --access=public && cd .. && cd .. && npm run bip",
     "test": "ng test common-angular"
   },
   "prettier": {
